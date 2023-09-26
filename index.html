@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo List</title>
+</head>
+<link rel="styleSheet" src="./index.scss">
+<body>
+    <h1>Todo List</h1>
+    <ul id="todo-list"></ul>
+
+    <script>
+        var todos = [
+            {
+                title: "Eat lunch",
+                isDone: false
+            },
+            {
+                title: "Eat breakfast",
+                isDone: true
+            },
+            {
+                title: "Read book",
+                isDone: false
+            }
+        ];
+
+       
+       
+       
+       
+        var todoList = document.getElementById("todo-list");
+
+        todos.forEach(function(todo) {
+            var listItem = document.createElement("li");
+            listItem.textContent = todo.title;
+
+            if (todo.isDone) {
+                listItem.style.textDecoration = "line-through";
+            }
+
+            todoList.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>
